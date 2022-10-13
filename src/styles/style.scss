@@ -1,0 +1,468 @@
+// google fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Syne:wght@700;800&display=swap");
+
+// variables
+
+$main-font: "Syne", sans-serif;
+$sub-font: "Inter", sans-serif;
+$color-one: #000000;
+$color-two: #faf7f0;
+$color-three: #ff0075;
+
+// sass resets
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: $sub-font;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+a,
+span,
+p {
+  line-height: 1.7;
+}
+img {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-one;
+  font-size: 100%;
+  padding: 0 8%;
+  scroll-margin: 10% 0 0 0;
+}
+
+// button
+
+.btn {
+  padding: 0.5rem 3rem;
+  color: $color-two;
+  border-top: 1px solid $color-three;
+  border-bottom: 1px solid $color-three;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2%;
+    height: 50%;
+    background-color: $color-three;
+    z-index: -1;
+    transition: 0.4s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2%;
+    height: 50%;
+    background-color: $color-three;
+    z-index: -1;
+    transition: 0.4s;
+  }
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// navbar
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    background-color: $color-one;
+    position: relative;
+    .navlogo {
+      a {
+        color: $color-three;
+        text-transform: uppercase;
+        font-family: $main-font;
+      }
+    }
+    .menu {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+
+      span {
+        background-color: $color-three;
+        width: 3rem;
+        height: 2px;
+      }
+      span:nth-child(2) {
+        margin-left: 0.5rem;
+      }
+    }
+    .tabs {
+      position: absolute;
+      top: 5.6rem;
+      right: 0;
+      background-color: $color-two;
+      padding: 2rem 2rem;
+      width: 15rem;
+      text-transform: uppercase;
+      display: none;
+      > li {
+        margin: 1.5rem 0;
+        a {
+          position: relative;
+          color: $color-one;
+          padding-bottom: 0.5rem;
+          i {
+            margin-right: 0.5rem;
+            display: none;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: $color-one;
+            transition: 0.4s;
+          }
+          &:hover::before {
+            width: 100%;
+          }
+        }
+      }
+      .social {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li {
+          a {
+            i {
+              color: $color-one;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// navtext
+.navtext {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  > div {
+    padding: 1rem;
+  }
+  .text {
+    width: 60%;
+    color: $color-two;
+    text-transform: capitalize;
+    h1 {
+      color: $color-three;
+    }
+    p {
+      width: 97%;
+      margin-bottom: 3rem;
+    }
+  }
+  .img {
+    width: 40%;
+  }
+}
+
+// about us
+.about {
+  scroll-margin-top: 5rem;
+  display: flex;
+  padding: 2rem 0;
+  > div {
+    padding: 1rem;
+  }
+  .about-img {
+    width: 40%;
+  }
+  .about-text {
+    width: 60%;
+    color: $color-two;
+    h1 {
+      color: $color-three;
+    }
+    p {
+      margin-bottom: 0.5rem;
+    }
+    p:nth-child(3) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+// services
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+
+  > h1 {
+    color: $color-three;
+    text-transform: capitalize;
+    padding-bottom: 2rem;
+  }
+  .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > div {
+      width: 30%;
+      padding: 1rem;
+      background-color: $color-three;
+      margin: 0.5rem;
+
+      h4 {
+        text-transform: capitalize;
+        margin-bottom: 0.5rem;
+        color: $color-one;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// work
+.work {
+  scroll-margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  > h1 {
+    color: $color-three;
+    text-transform: capitalize;
+  }
+  > p {
+    color: $color-two;
+    width: 60%;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    > div {
+      width: 30%;
+      margin: 0.5rem;
+    }
+    .box-2 {
+      div:nth-child(1) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  *div {
+    img {
+      margin-bottom: 1rem;
+    }
+    h4 {
+      color: $color-three;
+      font-size: 1.1rem;
+      text-transform: capitalize;
+    }
+    p {
+      color: $color-two;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+// testimonials
+.testimonials {
+  scroll-margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  > h1 {
+    color: $color-three;
+    text-transform: capitalize;
+  }
+  > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0;
+    *div {
+      margin: 0.5rem;
+    }
+    .feedback-text {
+      width: 60%;
+      padding: 1rem;
+      text-align: justify;
+      * {
+        margin: 1rem 0;
+      }
+
+      span,
+      p {
+        color: $color-two;
+      }
+
+      span:last-child {
+        color: $color-three;
+        text-transform: capitalize;
+        i {
+          color: $color-two;
+          text-transform: uppercase;
+        }
+      }
+      p {
+        border-left: 2px solid $color-three;
+        padding-left: 1rem;
+      }
+      h4 {
+        color: $color-three;
+      }
+    }
+    .feedback-img {
+      width: 25%;
+    }
+  }
+}
+
+// newslatter
+
+.newslatter {
+  padding: 2rem 0;
+  display: flex;
+  place-content: center;
+
+  .input {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background-color: $color-three;
+    padding: 5rem 0;
+    > h1 {
+      margin-bottom: 1rem;
+      text-transform: capitalize;
+    }
+    > div {
+      display: flex;
+      place-content: center;
+      width: 100%;
+
+      input {
+        width: 70%;
+        padding: 1rem;
+        border-radius: 3rem 0 0 3rem;
+      }
+      button {
+        background-color: $color-one;
+        color: $color-three;
+        padding: 1rem 1.5rem;
+        text-transform: capitalize;
+        border-radius: 0 3rem 3rem 0;
+        cursor: pointer;
+        transition: 0.4s;
+        &:hover {
+          color: $color-two;
+        }
+      }
+    }
+  }
+}
+
+// footer
+footer {
+  scroll-margin-top: 5rem;
+  background-color: $color-three;
+  padding: 2rem 0;
+  * {
+    color: $color-one;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    > div {
+      width: 30%;
+    }
+    .footer-logo {
+      a {
+        text-transform: uppercase;
+        font-family: $main-font;
+      }
+    }
+    .footer-quicklinks {
+      ul {
+        li {
+          margin: 0.5rem 0;
+          text-transform: uppercase;
+
+          a {
+            padding-bottom: 0.5rem;
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background-color: $color-one;
+              transition: 0.4s;
+            }
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .footer-social-links {
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        li {
+          margin: 0 1rem;
+          font-size: 2rem;
+          text-transform: capitalize;
+          * {
+            font-family: $main-font;
+          }
+        }
+      }
+    }
+  }
+}
