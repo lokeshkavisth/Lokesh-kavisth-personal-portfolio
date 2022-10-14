@@ -208,6 +208,7 @@ nav {
   }
   .about-img {
     width: 40%;
+    overflow: hidden;
   }
   .about-text {
     width: 60%;
@@ -283,6 +284,8 @@ nav {
     > div {
       width: 30%;
       margin: 0.5rem;
+      padding-bottom: 1rem;
+      overflow: hidden;
     }
     .box-2 {
       div:nth-child(1) {
@@ -293,6 +296,10 @@ nav {
   *div {
     img {
       margin-bottom: 1rem;
+      transition: 0.4s;
+      &:hover {
+        scale: 1.1;
+      }
     }
     h4 {
       color: $color-three;
