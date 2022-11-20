@@ -185,6 +185,9 @@ nav {
     width: 60%;
     color: $color-two;
     text-transform: capitalize;
+    > span {
+      text-transform: none;
+    }
     h1 {
       color: $color-three;
     }
